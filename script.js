@@ -11,6 +11,11 @@ const celebrationNextBtn = document.getElementById('celebrationNextBtn');
 const backBtn = document.getElementById('backBtn');
 const nextBtn = document.getElementById('nextBtn');
 
+// Check if device is mobile
+function isMobile() {
+  return window.innerWidth <= 480;
+}
+
 // Show celebration when Yes is clicked
 yesButtons.forEach(btn => {
   btn.addEventListener('click', showCelebration);
@@ -18,8 +23,14 @@ yesButtons.forEach(btn => {
 
 function showCelebration() {
   initialButtons.style.display = 'none';
-  celebrationSection.style.display = 'block';
-  currentScreen = 'celebration';
+  
+  // On mobile, skip celebration and go directly to plans
+  if (isMobile()) {
+    showPlans();
+  } else {
+    celebrationSection.style.display = 'block';
+    currentScreen = 'celebration';
+  }
 }
 
 celebrationNextBtn.addEventListener('click', showPlans);
@@ -52,8 +63,8 @@ backBtn.addEventListener('click', () => {
   if (currentPlanIndex > 0) {
     currentPlanIndex--;
     updatePlanView();
-  } else {
-    // Go back to celebration screen if on first plan
+  } else if (!isMobile()) {
+    // Go back to celebration screen if on first plan (desktop only)
     plansSection.style.display = 'none';
     celebrationSection.style.display = 'block';
     currentScreen = 'celebration';
