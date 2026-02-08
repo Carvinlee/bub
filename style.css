@@ -5,16 +5,21 @@
 
 html,body{
   height:100%;
-  min-height:100vh;
+  width:100%;
   margin:0;
+  padding:0;
 }
 
 body {
   background-color: #FFD1DC;
+  min-height:100vh;
   display:flex;
+  flex-direction:column;
   align-items:center;
   justify-content:center;
   font-family: 'Roboto', system-ui, sans-serif;
+  -webkit-font-smoothing:antialiased;
+  -webkit-box-sizing:border-box;
 }
 
 .card{
@@ -25,6 +30,8 @@ body {
   background:var(--card-bg);
   box-shadow:0 8px 24px rgba(0,0,0,0.08);
   text-align:center;
+  box-sizing:border-box;
+  -webkit-box-sizing:border-box;
 }
 
 .title{
@@ -69,11 +76,22 @@ body {
 }
 
 @media (max-width:480px){
+  body{
+    -webkit-align-items:center;
+    -webkit-justify-content:center;
+  }
   .card{
-    width:100%;
+    width:95vw;
     max-width:100%;
     padding:16px 12px;
     border-radius:8px;
+    margin:0 auto;
+  }
+  .plan-view{
+    width:100%;
+  }
+  .plan-content{
+    width:100%;
   }
   .gif-container{
     width:140px;
