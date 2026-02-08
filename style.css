@@ -5,6 +5,7 @@
 
 html,body{
   height:100%;
+  min-height:100vh;
   margin:0;
 }
 
@@ -67,9 +68,51 @@ body {
   cursor:pointer;
 }
 
-@media (max-width:420px){
-  .gif-container{ width:140px; height:140px }
-  .title{ font-size:18px }
+@media (max-width:480px){
+  .card{
+    width:100%;
+    max-width:100%;
+    padding:16px 12px;
+    border-radius:8px;
+  }
+  .gif-container{
+    width:140px;
+    height:140px;
+  }
+  .title{
+    font-size:20px;
+    margin:0 0 12px 0;
+  }
+  .buttons{
+    flex-direction:column;
+    gap:10px;
+  }
+  .yes{
+    width:100%;
+    padding:14px 20px;
+    font-size:16px;
+  }
+  .celebration-text{
+    font-size:36px;
+    margin:0 0 12px 0;
+  }
+  .celebration-sub{
+    font-size:18px;
+  }
+  .plan-content h2{
+    font-size:22px;
+  }
+  .plan-location{
+    font-size:16px;
+  }
+  .plan-desc{
+    font-size:13px;
+  }
+  .nav-btn{
+    padding:12px 14px;
+    font-size:13px;
+    flex:1;
+  }
 }
 
 /* Plan Section Styles */
@@ -166,9 +209,17 @@ body {
   margin:0;
 }
 
-@media (max-width:420px){
+@media (max-width:480px){
   .photos-grid{
-    max-width:280px;
+    grid-template-columns:1fr;
+    max-width:260px;
+  }
+  .celebration-content{
+    padding:20px 12px;
+    min-height:150px;
+  }
+  .photo-caption{
+    font-size:16px;
   }
 }
 
